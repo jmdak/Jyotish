@@ -1,113 +1,243 @@
 
-# 🌟 Jyotish GPT – AI-Powered Vedic Astrology Engine
+🔱 Jyotish GPT — Advanced Vedic + Lal Kitab Astrology Engine
 
-**Jyotish GPT** is a fully dynamic, Python-based Vedic astrology engine that:
-- Calculates **birth charts (D1), divisional charts (D9, D10, etc.)**
-- Computes **Vimshottari Mahadasha & Antardasha** timelines till 120 years
-- Detects classical **Yogas** and **Doshas** with exact reasoning
-- Generates **timeline-based predictions**
-- Produces **PDF reports** and optionally integrates with Google Docs / Zapier
 
----
+⸻
 
-## 🔧 Technologies Used
-- ✅ Swiss Ephemeris (`pyswisseph`)
-- ✅ Python 3
-- ✅ ReportLab, Pandas, Flask
-- ✅ Markdown-ready output
+Jyotish GPT is a full-scale, bilingual (Hindi-English) Astrology Platform that generates hyper-detailed astrological reports based on classical Vedic Shastras and Lal Kitab. It supports dynamic Mahadasha timelines, divisional charts (D1–D16), real-time transit analysis, yoga/dosha detection, Lal Kitab forecasts, remedies including Tantra insights, and personalized Q&A functionality — all packaged in beautiful PDF or Google Docs exports.
 
----
+⸻
 
-## ⚙️ Core Modules
+🧿 Features
+	•	🔭 Accurate Planetary Calculations (Swiss Ephemeris).
+	•	📈 Vimshottari Dasha — 120 years Mahadasha/Antardasha/Pratyantar.
+	•	🛕 Divisional Charts — D1 to D16 (Navamsa, Dasamsa, etc.).
+	•	🔮 Yoga and Dosha Detection — Rajyogas, Manglik, Kaal Sarp, Pitra Dosha.
+	•	🛕 Lal Kitab Forecast — Yearly and Monthly Varshphal till 25 years.
+	•	📅 Transit Predictions — Jupiter, Saturn, Rahu/Ketu, Sade Sati analysis.
+	•	🧿 Remedies Engine — Mantras, Gemstones, Totkas.
+	•	🔱 Tantra Remedies — Beej Mantras, Yantras, Deity Upasana.
+	•	🌙 Nakshatra Deity Remedies — Secret upayas based on Janma Nakshatra.
+	•	🔢 Numerology Analysis — Birth, Destiny, Name Numbers.
+	•	📚 Spiritual Evolution Timeline — Life Phase Mapping (Karma, Bhakti, Jnana).
+	•	🔍 Ask Your Kundli — AI-backed Q&A from your birth data.
+	•	🧾 PDF and Google Docs Export — Professional, printable reports.
+	•	📊 Admin Dashboard — Monitor Reports, Errors, Q&A Logs.
 
-### 📍 `birth_chart_calculator.py`
-- Sidereal planetary longitudes using Lahiri Ayanamsa
-- Ascendant (Lagna) & Moon Nakshatra + Pada
-- Whole Sign House (WSH) mapping
+⸻
 
-### 📍 `dasha_calculator.py`
-- Full Vimshottari Dasha calculation up to 2098
-- Moon Nakshatra balance and timeline
+🛠️ Technologies Used
 
-### 📍 `yoga_dosha_engine.py`
-- Detection of:
-  - Rajyogas, Dhan Yogas, Vipreet Rajyogas
-  - Neechabhanga Rajyoga
-  - Manglik, Kaal Sarp, Pitra, Grahan, Kemadruma, Shrapit Doshas
-  - Gajakesari, Budha-Aditya Yogas
-- Each rule logs "Detected" ✅ or "Not Detected" ❌ with reasoning
+Layer	Tech Stack
+Backend	Python (Flask), Swiss Ephemeris
+Frontend	React, Vite, TailwindCSS
+Data	JSON, SQLite
+Export	Markdown → WeasyPrint / Google Docs API
+Deployment	Replit
 
-### 📍 `timeline_predictor.py`
-- Predicts career, health, relationships, spiritual trends
-- Uses Dasha sequence + yoga/dosha activation
-- Narrative output per period
 
----
+⸻
 
-## 📦 Output
-- ✅ Planet-wise Chart
-- ✅ Lagna, Nakshatra Summary
-- ✅ Mahadasha & Antardasha Timeline
-- ✅ Full Yoga/Dosha Table
-- ✅ Timeline-based Predictions
-- ✅ PDF Export (via ReportLab)
+🗂️ Project Structure
 
----
+jyotish-gpt/
+├── backend/
+│   ├── app.py
+│   ├── astrology_calculations.py
+│   ├── dasha_calculator.py
+│   ├── divisional_chart_generator.py
+│   ├── transit_engine.py
+│   ├── yoga_detection.py
+│   ├── dosha_detection.py
+│   ├── lal_kitab_engine.py
+│   ├── remedies_engine.py
+│   ├── tantra_remedies_engine.py
+│   ├── nakshatra_remedies_engine.py
+│   ├── monthly_forecast_generator.py
+│   ├── personality_analysis.py
+│   ├── spiritual_timeline.py
+│   ├── ask_question_engine.py
+│   ├── report_generator.py
+│   ├── google_docs_api.py
+│   ├── pdf_exporter.py
+│   ├── models.py
+│   ├── utils/
+│   │   ├── geo_location.py
+│   │   ├── ayanamsa.py
+│   │   ├── timezone_converter.py
+│   ├── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── App.tsx
+│   │   ├── components/
+│   │   │   ├── InputForm.tsx
+│   │   │   ├── KundliChart.tsx
+│   │   │   ├── DivisionalCharts.tsx
+│   │   │   ├── DashaTimeline.tsx
+│   │   │   ├── PredictionsSection.tsx
+│   │   │   ├── RemediesSection.tsx
+│   │   │   ├── TantraSection.tsx
+│   │   │   ├── MonthlyForecastSection.tsx
+│   │   │   ├── SpiritualTimeline.tsx
+│   │   │   ├── AskQuestion.tsx
+│   │   │   ├── ReportViewer.tsx
+│   │   │   ├── AdminDashboard.tsx
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   ├── package.json
+├── data/
+│   ├── lal_kitab_grammar.json
+│   ├── yogas_data.json
+│   ├── doshas_data.json
+│   ├── remedies_data.json
+│   ├── tantra_data.json
+│   ├── nakshatra_deity_remedies.json
+│   ├── numerology_data.json
+│   ├── monthly_forecast_rules.json
+├── database/
+│   ├── jyotish_gpt.db
+│   ├── schema.sql
+├── sample_reports/
+│   ├── SAMPLE_REPORT.md
+│   ├── sample_report_output.pdf
+├── README.md
 
-## 🧪 Test Example
 
-```python
-# Sample Input
-Name: Anurag Kapoor
-DOB: 2 September 1978
-TOB: 23:45 IST
-Place: Delhi, India
-```
+⸻
 
-Results:
-- Lagna: Taurus ♉︎
-- Moon: Leo, Purva Phalguni Nakshatra
-- Active Dasha: Rahu (2015–2033)
-- Yogas: Kemadruma Dosha ✅
-- Kaal Sarp: ❌ Not Detected
+📚 Key Features Explained
 
----
+🔭 Planetary & House Calculations
+	•	Accurate sidereal longitudes using Swiss Ephemeris.
+	•	House Cusp calculations.
+	•	Lagna (Ascendant) based on Place, Date, Time.
 
-## 🚀 Installation
+📅 Dasha & Timeline Predictions
+	•	Full 120-year Vimshottari Mahadasha-Antardasha.
+	•	Monthly breakdowns with nested dashas.
+	•	Gantt chart visualization.
 
-```bash
+🔮 Yogas and Doshas Detection
+	•	BPHS Yogas (Gajakesari, Neechabhanga, Vipreet Rajyoga, etc.).
+	•	Doshas: Manglik, Kaal Sarp, Pitra, Grahan, Kemadruma.
+
+🛕 Lal Kitab Forecast
+	•	Planet-House effects (grammar based).
+	•	25 years of Yearly and Monthly Forecasts.
+
+🧿 Remedies Engine
+	•	Personalized:
+	•	Mantras (Sanskrit + Hindi Transliteration).
+	•	Gemstone Recommendations.
+	•	Totkas and Upayas.
+	•	Priority Scheduler for remedies (Start date, Duration, Urgency).
+
+🔱 Tantra and Mystical Remedies
+	•	Beej Mantras.
+	•	Yantra Energization.
+	•	Deity-based Remedies.
+	•	Nakshatra Deity Secret Remedies (Hidden Upayas).
+
+🌙 Numerology and Spiritual Timeline
+	•	Birth Number, Destiny Number, Name Number Predictions.
+	•	Suggested Life Phases: Karma Yoga → Bhakti Yoga → Jnana Yoga.
+
+❓ Ask Your Kundli (Q&A)
+	•	Type your question and get a dynamic astrology-backed answer.
+
+📄 Reporting
+	•	Full Markdown-based report with:
+	•	Charts (Lagna, Navamsa, Dasamsa).
+	•	Tables (Planetary Positions, Dasha Timeline, Remedies).
+	•	Graphs (Strength Graphs, Dasha Gantt Chart).
+	•	Life Area Wise Predictions.
+	•	Exportable as:
+	•	📄 PDF (WeasyPrint / ReportLab).
+	•	📝 Google Docs (via Docs API).
+
+⸻
+
+🚀 Quick Start
+
+1. Clone the Repository
+
 git clone https://github.com/your-username/jyotish-gpt.git
 cd jyotish-gpt
+
+2. Setup Backend
+
+cd backend
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-python main.py
-```
+python app.py
 
----
+3. Setup Frontend
 
-## 📁 Project Structure
+cd frontend
+npm install
+npm run dev
 
-```
-jyotish-gpt/
-├── app/
-│   ├── birth_chart_calculator.py
-│   ├── dasha_calculator.py
-│   ├── yoga_dosha_engine.py
-│   ├── timeline_predictor.py
-│   └── report_exporter.py
-├── data/  # Swiss Ephemeris files
-├── output/  # PDF reports
-├── main.py
-├── requirements.txt
-```
+4. Access
+	•	Frontend: http://localhost:3000
+	•	Backend API: http://localhost:5000
 
----
+⸻
 
-## 📘 License
-MIT
+📦 Deployment
+	•	Replit-ready.
+	•	Railway.app Deployment guide.
+	•	Dockerfile (coming soon!).
 
----
+⸻
 
-## 🙏 Acknowledgments
-- Classical Sources: BPHS, Saravali, Phaladeepika
-- Astronomy by Swiss Ephemeris
-- Assisted by OpenAI ChatGPT for narrative generation
+📚 References
+	•	📖 Brihat Parashara Hora Shastra (BPHS)
+	•	📖 Jataka Parijata
+	•	📖 Saravali
+	•	📖 Phaladeepika
+	•	📖 Lal Kitab (1941 Edition + Later)
+	•	📖 KP Astrology Texts
+	•	📖 Astrological Yogas by B.V. Raman
+
+⸻
+
+🧿 License
+
+MIT License
+
+⸻
+
+🤝 Contributing
+
+PRs, suggestions, and new ideas are welcome! Please create an issue or submit a pull request.
+
+⸻
+
+👨‍💻 Author
+
+Built with 🧡 by Your Name
+
+⸻
+
+📝 Sample Report Preview
+
+
+⸻
+
+📫 Contact
+
+For consulting or API integration: 📧 your.email@example.com
+
+⸻
+
+🔥 Support This Project
+
+If you found this project helpful, please ⭐ star the repo and spread the word!
+
+⸻
+
+🌟 Live Demo
+
+coming soon!
+
